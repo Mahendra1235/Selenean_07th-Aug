@@ -1,0 +1,42 @@
+<svg width="1600" height="220" viewBox="0 0 1600 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+<linearGradient id="wave1" x1="0" y1="0" x2="1600" y2="0">
+<stop stop-color="#8BE9FF"/>
+<stop offset="0.5" stop-color="#FFFFFF"/>
+<stop offset="1" stop-color="#7CFFD5"/>
+</linearGradient>
+
+<filter id="blur">
+<feGaussianBlur stdDeviation="2"/>
+</filter>
+
+</defs>
+
+<path
+d="M-50 150 C180 70 350 230 600 140 C850 40 980 220 1250 120 C1450 40 1600 150 1700 110"
+stroke="url(#wave1)"
+stroke-width="2"
+stroke-opacity="0.8"
+fill="none"
+filter="url(#blur)"
+/>
+
+<path
+d="M-30 175 C220 110 420 210 700 165 C950 120 1150 230 1400 145 C1520 110 1650 150 1750 130"
+stroke="url(#wave1)"
+stroke-width="1.5"
+stroke-opacity="0.55"
+fill="none"
+/>
+
+<path
+d="M-40 120 C180 170 350 60 650 130 C900 190 1100 70 1350 145 C1500 185 1700 100 1800 145"
+stroke="url(#wave1)"
+stroke-width="1.2"
+stroke-opacity="0.45"
+fill="none"
+/>
+
+</svg>
