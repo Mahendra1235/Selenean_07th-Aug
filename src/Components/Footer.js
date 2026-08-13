@@ -114,12 +114,12 @@ const Footer = () => {
         <div className="footer-links">
           <h3>Solutions</h3>
 
-          <Link to="/silicon">Semiconductor</Link>
+          <Link to="/silicon">Silicon</Link>
 
-          <Link to="/systems">Embedded Systems</Link>
+          <Link to="/systems">Systems</Link>
 
           <Link to="/sustainability">
-            Sustainable Digital Solutions
+            Sustainability
           </Link>
 
         </div>
@@ -130,7 +130,7 @@ const Footer = () => {
 
           <Link to="/">Home</Link>
 
-          <Link to="/about">About Us</Link>
+          <Link to="/#about">About Us</Link>
 
           <Link to="/partners">Partners</Link>
 
