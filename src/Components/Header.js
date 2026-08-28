@@ -9,7 +9,7 @@ import {
 import "./Header.css";
 
 import logo from "../assets/Selenean-new logo.webp";
-import utsLogo from "../assets/UTS_Resized logo,,1.webp";
+// import utsLogo from "../assets/UTS_Resized logo,,1.webp";
 
 // Featured solution images
 import siliconImage from "../assets/silicon.webp";
@@ -512,7 +512,7 @@ export default function Header() {
             RIGHT UTS LOGO
         =================================================== */}
 
-        <Link
+        {/* <Link
           to="/"
           className="side-logo"
           onClick={handleLogoClick}
@@ -524,7 +524,7 @@ export default function Header() {
             className="logo-img"
           />
 
-        </Link>
+        </Link> */}
 
 
         {/* ===================================================

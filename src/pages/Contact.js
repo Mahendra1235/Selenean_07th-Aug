@@ -64,10 +64,41 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setSubmitted(true);
+  // };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setSubmitted(true);
+
+      setForm({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } else {
+      alert(data.message || "Failed to send message.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Unable to connect to the server. Please try again later.");
+  }
+};
 
   return (
     <>
