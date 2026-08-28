@@ -1028,6 +1028,32 @@
 
 
 /* =========================================================
+   MID-SIZE DESKTOPS (993px - 1199px)
+   Keep the fixed-width 850px mega menu fully inside the
+   viewport so it can not force the page to scroll sideways.
+   ========================================================= */
+
+@media (min-width: 993px) and (max-width: 1199px) {
+
+  .mega-menu {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    right: auto;
+    width: min(850px, calc(100vw - 48px));
+    transform: translate(-50%, 15px);
+  }
+
+
+  .mega-dropdown:hover .mega-menu,
+  .mega-dropdown:focus-within .mega-menu {
+    transform: translate(-50%, 0);
+  }
+
+}
+
+
+/* =========================================================
    TABLET / MOBILE
    ========================================================= */
 
