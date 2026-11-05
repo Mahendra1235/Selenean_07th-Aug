@@ -1,0 +1,62 @@
+{
+    "name": "selenean-new",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@azure/msal-node": "^7.1.2",
+        "@testing-library/dom": "^10.4.1",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/react": "^16.3.2",
+        "@testing-library/user-event": "^13.5.0",
+        "cors": "^2.8.6",
+        "dotenv": "^17.4.2",
+        "express": "^5.2.1",
+        "is-module": "^1.0.0",
+        "is-root": "^3.0.0",
+        "lucide-react": "^1.28.0",
+        "nodemailer": "^10.3.1",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8",
+        "react-icons": "^5.7.0",
+        "react-router-dom": "^7.18.2",
+        "react-scripts": "5.0.1",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "node scripts/start.js",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "server": "node server.js"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "ajv": "^8.20.0",
+        "ajv-keywords": "^5.1.0",
+        "sharp": "^0.35.3"
+    },
+    "jest": {
+        "moduleNameMapper": {
+            "^react-router/dom$": "<rootDir>/node_modules/react-router/dist/development/dom-export.js",
+            "^react-router$": "<rootDir>/node_modules/react-router/dist/development/index.js"
+        }
+    },
+    "proxy": "http://localhost:5000"
+}
