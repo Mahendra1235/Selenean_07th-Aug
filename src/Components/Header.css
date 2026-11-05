@@ -51,7 +51,7 @@
 
 
 .logo-img {
-  height: 64px;
+  height: 70px;
   width: auto;
 
   display: block;
@@ -184,21 +184,45 @@
   position: relative;
 }
 
+/*
+   Invisible hover bridge between the Solutions link and
+   the mega menu, so the menu stays open while the cursor
+   travels across the 18px gap.
+*/
+
+.mega-dropdown::after {
+  content: "";
+
+  position: absolute;
+
+  top: 100%;
+  right: -40px;
+
+  width: 800px;
+  height: 40px;
+
+  pointer-events: none;
+}
+
+.mega-dropdown:hover::after,
+.mega-dropdown:focus-within::after {
+  pointer-events: auto;
+}
+
 
 /*
    Main mega menu
 */
 
 .mega-menu {
-  position: absolute;
+  position: fixed;
 
-  /* Directly below Solutions */
-  top: calc(100% + 18px);
+  /* Directly below the header, pinned to the right edge */
+  top: 100px;
+  right: 8px;
+  left: auto;
 
-  /* Move menu slightly to the right */
-  left: -40px;
-
-  width: 850px;
+  width: min(800px, calc(100vw - 16px));
 
   min-height: 410px;
 
@@ -242,7 +266,8 @@
 
   top: -8px;
 
-  left: 50%;
+  left: auto;
+  right: 70px;
 
   width: 16px;
   height: 16px;
@@ -266,35 +291,7 @@
   visibility: visible;
   transform: translateY(0);
 }
-.mega-menu-logo {
-  width: 180px;
-  height: auto;
 
-  object-fit: contain;
-
-  opacity: 0.95;
-
-  transition:
-    transform 0.35s ease,
-    opacity 0.35s ease;
-}
-
-.mega-menu-logo:hover {
-  transform: scale(1.04);
-  opacity: 1;
-}
-
-@keyframes logoFade {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
 /* =========================================================
    LEFT SIDE OF MEGA MENU
@@ -507,22 +504,6 @@
   justify-content: center;
 
   min-width: 0;
-}
-
-
-/* =========================================================
-   EMPTY STATE
-   ========================================================= */
-
-.featured-placeholder {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  animation: logoFade 0.35s ease;
 }
 
 
@@ -1024,32 +1005,6 @@
     );
 
   color: #ffffff;
-}
-
-
-/* =========================================================
-   MID-SIZE DESKTOPS (993px - 1199px)
-   Keep the fixed-width 850px mega menu fully inside the
-   viewport so it can not force the page to scroll sideways.
-   ========================================================= */
-
-@media (min-width: 993px) and (max-width: 1199px) {
-
-  .mega-menu {
-    position: fixed;
-    top: 100px;
-    left: 50%;
-    right: auto;
-    width: min(850px, calc(100vw - 48px));
-    transform: translate(-50%, 15px);
-  }
-
-
-  .mega-dropdown:hover .mega-menu,
-  .mega-dropdown:focus-within .mega-menu {
-    transform: translate(-50%, 0);
-  }
-
 }
 
 

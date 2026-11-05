@@ -8,7 +8,7 @@ import {
 
 import "./Header.css";
 
-import logo from "../assets/Selenean-new logo.webp";
+import logo from "../assets/Selenean-White.jpg";
 // import utsLogo from "../assets/UTS_Resized logo,,1.webp";
 
 // Featured solution images
@@ -24,7 +24,7 @@ export default function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
 
   // Controls the image/content shown on the right side
-  const [activeSolution, setActiveSolution] = useState(null);
+  const [activeSolution, setActiveSolution] = useState("silicon");
 
   const location = useLocation();
 
@@ -36,7 +36,7 @@ export default function Header() {
   useEffect(() => {
     setOpen(false);
     setSolutionsOpen(false);
-    setActiveSolution(null);
+    setActiveSolution("silicon");
   }, [location.pathname]);
 
 
@@ -62,7 +62,7 @@ export default function Header() {
   const closeMenu = () => {
     setOpen(false);
     setSolutionsOpen(false);
-    setActiveSolution(null);
+    setActiveSolution("silicon");
   };
 
   const handleLogoClick = () => {
@@ -117,6 +117,7 @@ export default function Header() {
               <Link
                 to="/#solutions"
                 className="nav-link"
+                onMouseEnter={() => setActiveSolution("silicon")}
               >
                 Solutions
 
@@ -131,8 +132,12 @@ export default function Header() {
               <div
                 className="mega-menu"
 
+                onMouseEnter={() => {
+                  setActiveSolution((current) => current || "silicon");
+                }}
+
                 onMouseLeave={() => {
-                  setActiveSolution(null);
+                  setActiveSolution("silicon");
                 }}
               >
 
@@ -174,6 +179,10 @@ export default function Header() {
                     onMouseEnter={() =>
                       setActiveSolution("silicon")
                     }
+
+                    onFocus={() =>
+                      setActiveSolution("silicon")
+                    }
                   >
 
                     <span className="solution-dot"></span>
@@ -211,6 +220,10 @@ export default function Header() {
                     }`}
 
                     onMouseEnter={() =>
+                      setActiveSolution("systems")
+                    }
+
+                    onFocus={() =>
                       setActiveSolution("systems")
                     }
                   >
@@ -252,6 +265,10 @@ export default function Header() {
                     onMouseEnter={() =>
                       setActiveSolution("sustainability")
                     }
+
+                    onFocus={() =>
+                      setActiveSolution("sustainability")
+                    }
                   >
 
                     <span className="solution-dot"></span>
@@ -284,21 +301,6 @@ export default function Header() {
                 ============================================= */}
 
                 <div className="mega-menu-right">
-
-
-                  {/* -----------------------------------------
-                      NOTHING SHOWN INITIALLY
-                  ----------------------------------------- */}
-
-                 {activeSolution === null && (
-  <div className="featured-placeholder">
-    <img
-      src={logo}
-      alt="Selenean"
-      className="mega-menu-logo"
-    />
-  </div>
-)}
 
 
                   {/* =========================================
@@ -631,7 +633,7 @@ export default function Header() {
               to="/systems"
               onClick={closeMenu}
             >
-              Embedded Systems
+              Systems
             </Link>
 
 

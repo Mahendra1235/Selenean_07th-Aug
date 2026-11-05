@@ -195,22 +195,12 @@ export default function Home() {
             <div className="about-right">
 
               <p>
-                <strong>Selenean Technologies</strong> is a leading engineering
-                company specializing in Semiconductor Design, Embedded Systems
-                and Sustainable Digital Solutions.
+                <strong>Selenean Tech</strong> is a leading Technology company committed to developing innovative products starting ASIC's to Full Stack System Products through innovative, reliable, and high-performance solutions.
+              <br/>
+               With a focus on quality and customer satisfaction, we provide solutions that empower industries like Semiconductors, Automotive, Hyperscalar Data Centres and Industrial IoT.
               </p>
 
-              <p>
-                We help businesses accelerate innovation through advanced
-                silicon engineering, intelligent system development and
-                AI-driven sustainability solutions.
-              </p>
-
-              <p>
-                With expertise across ASIC/SoC Design, Embedded Platforms,
-                IoT, Digital Twins and Data Centre Decarbonization,
-                we transform ideas into reliable products.
-              </p>
+          
 
             </div>
 

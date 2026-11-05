@@ -37,7 +37,7 @@ export default function Systems() {
 
       <section className="semi-hero">
         <div className="container">
-          <span className="page-tag">Embedded SOLUTIONS</span>
+          <span className="page-tag">SYSTEMS</span>
 
           <h1>
             Turning connected

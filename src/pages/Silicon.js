@@ -37,7 +37,7 @@ export default function Silicon() {
 
       <section className="semi-hero">
         <div className="container">
-          <span className="page-tag">SEMICONDUCTOR SOLUTIONS</span>
+          <span className="page-tag">SILICON</span>
 
           <h1>
             Engineering the

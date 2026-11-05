@@ -9,7 +9,7 @@ import {
   FaArrowUp,
 } from "react-icons/fa";
 
-import logo from "../assets/footer logo.jpg";
+import logo from "../assets/footer logo_new.jpg";
 
 const Footer = () => {
   return (
@@ -185,15 +185,20 @@ const Footer = () => {
             <span>|</span>
 
             <Link to="/terms">Terms of Use</Link>
+
+            <span>|</span>
+
+            <Link to="/cookie-policy">Cookie Policy</Link>
+
+            <button
+              className="footer-to-top"
+              aria-label="Back to top"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <FaArrowUp />
+            </button>
           </div>
         </div>
-        <button
-          className="footer-to-top"
-          aria-label="Back to top"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          <FaArrowUp />
-        </button>
       </div>
     </footer>
   );

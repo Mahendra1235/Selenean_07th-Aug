@@ -11,6 +11,9 @@ import Sustainability from "./pages/Sustainability";
 import Partners from "./pages/Partners";
 // import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Cookie from "./pages/Cookie";
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
         <Route path="/partners" element={<Partners />} />
         {/* <Route path="/about" element={<About />} /> */}
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/cookie-policy" element={<Cookie />} />
       </Routes>
 
       <Footer />

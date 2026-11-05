@@ -59,7 +59,7 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
-
+  const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -68,37 +68,60 @@ export default function Contact() {
   //   e.preventDefault();
   //   setSubmitted(true);
   // };
-  const handleSubmit = async (e) => {
+
+const handleSubmit = async (e) => {
   e.preventDefault();
 
+  if (loading) return;
+
+  setLoading(true);
+
   try {
-    const response = await fetch("http://localhost:5000/api/contact", {
+    const apiUrl = `${
+      process.env.REACT_APP_API_BASE_URL || ""
+    }/api/contact`;
+
+    const response = await fetch(apiUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify(form),
+      body: JSON.stringify(form)
     });
 
-    const data = await response.json();
+    const raw = await response.text();
+    let data = {};
 
-    if (data.success) {
+    try {
+      data = raw ? JSON.parse(raw) : {};
+    } catch (error) {
+      data = {};
+    }
+
+    if (response.ok && data.success) {
       setSubmitted(true);
 
       setForm({
         name: "",
         email: "",
         subject: "",
-        message: "",
+        message: ""
       });
     } else {
-      alert(data.message || "Failed to send message.");
+      alert(
+        data.message ||
+          `Failed to send message (server responded with ${response.status}).`
+      );
     }
+
   } catch (error) {
-    console.error(error);
+    console.error("Contact form error:", error);
     alert("Unable to connect to the server. Please try again later.");
+  } finally {
+    setLoading(false);
   }
 };
+
 
   return (
     <>
@@ -223,10 +246,14 @@ export default function Contact() {
                     />
                   </div>
 
-                  <button type="submit" className="primary-btn contact-submit">
-                    Send Message
-                    <FaPaperPlane />
-                  </button>
+                  <button
+  type="submit"
+  className="primary-btn contact-submit"
+  disabled={loading}
+>
+  {loading ? "Sending..." : "Send Message"}
+  {!loading && <FaPaperPlane />}
+</button>
                 </form>
               )}
             </div>
