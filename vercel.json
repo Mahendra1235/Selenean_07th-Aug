@@ -1,15 +1,17 @@
-
 {
-  "version": 2,
-  "functions": {
-    "api/*.js": {
-      "includeFiles": "lib/selenean-logo.png"
-    }
-  },
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "create-react-app",
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/*.js": {
+      "includeFiles": "lib/**"
+    }
+  }
 }

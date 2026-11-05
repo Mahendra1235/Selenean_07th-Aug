@@ -2,6 +2,9 @@
     "name": "selenean-new",
     "version": "0.1.0",
     "private": true,
+    "engines": {
+        "node": ">=20"
+    },
     "dependencies": {
         "@azure/msal-node": "^7.1.2",
         "@testing-library/dom": "^10.4.1",
